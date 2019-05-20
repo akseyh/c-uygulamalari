@@ -1,4 +1,4 @@
-## Veri Yapıları ve Algoritmalar dersi kapsamında linked list veri yapısında veri depolayan c kodu uygulaması.
+## Linked list ile sıralı ekleme yapan uygulama.
 
 ## Struct Yapısı:
 ```
