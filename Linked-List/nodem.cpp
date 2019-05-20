@@ -94,7 +94,7 @@ node* pop(node *r, int x){
 		printf("This node is empty.\n");
 		return r;
 	}
-	if(iter->next == NULL){
+	if(iter->next == NULL && iter->data == x){
 		node *temp = r;
 		r = NULL;
 		free(temp);
