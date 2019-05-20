@@ -1,5 +1,4 @@
-# Veri Yapıları ve Algoritmalar dersi kapsamında linked list veri yapısında veri depolayan c kodu uygulaması.
-# Sıralı ekleme fonksiyonu ile verileri küçükten büyüğe sıralayarak ekleme yapar.
+## Veri Yapıları ve Algoritmalar dersi kapsamında linked list veri yapısında veri depolayan c kodu uygulaması.
 
 ## Struct Yapısı:
 ```
@@ -12,7 +11,7 @@ struct n{
 ## Kök olacak node oluşturulması:
 ```
 node * root;
-  root = NULL;
+root = NULL;
 ```
 ## Push Fonksiyonu:
 push fonksiyonunda ilk olarak veri olmama olasılığını kontrol ediyoruz.
@@ -35,12 +34,12 @@ Burada bir ayrıcalık yapmamızın sebebi root'un direk olarak ilk elemanı gö
 Bu istisnalar haricinde bir sonraki adımda göreceğiz ki araya eleman eklemek istiyorsak ekleyeceğimiz aradan bir önceki elemanda durmamız ve sonraki attribute ile elemanı sonrasına ekleyeceğiz.
 ```
 if(r->data > x){
-		node * temp = (node *)malloc(sizeof(node));
-		temp->data = x;
-		temp->next = r;	
-		r = temp;
-		printf("%d is pushed to node.\n", x);
-		return r;
+	node * temp = (node *)malloc(sizeof(node));
+	temp->data = x;
+	temp->next = r;	
+	r = temp;
+	printf("%d is pushed to node.\n", x);
+	return r;
 	}
 ```
 
@@ -52,7 +51,7 @@ iter'i bir sonraki elemana işaret ettiriyoruz.
 Böylece iter ekleyeceğimiz alandan bir önceki elemanı işaret ediyor şuanda.
 ```
 while(iter->next != NULL && iter->next->data < x){
-		iter = iter->next;
+	iter = iter->next;
 	}
 ```
 
@@ -73,8 +72,8 @@ temp->data = x;
 İlk if ile node'un boş olup olmadığını kontrol ediyoruz. 
 ```
 if(iter == NULL){
-		printf("This node is empty.\n");
-		return r;
+	printf("This node is empty.\n");
+	return r;
 }
 ```
 
@@ -84,11 +83,11 @@ Ve tabii ki ayırdığımız elemanı ram üzerinden de silmek için geçici bir
 Ve root'u NULL'a işaret ettikten sonra temp'in işaret ettiği elemanı da free fonksiyonu ile ramden siliyoruz.
 ```
 if(iter->next == NULL){
-		node *temp = r;
-		r = NULL;
-		free(temp);
-		printf("%d is deleted.\n", x);
-		return r;
+	node *temp = r;
+	r = NULL;
+	free(temp);
+	printf("%d is deleted.\n", x);
+	return r;
 }
 ```
 
@@ -99,11 +98,11 @@ Ve ilk eleman aradığımız yani sileceğimiz değer ise bu değeri bir temp i�
 Ve sonrasında free fonksiyonu ile temp'in işaret ettiği elemanı siliyoruz.
 ```
 if(r->data == x){
-			node * temp = r;
-			r = r->next;
-			free(temp);
-			printf("%d is deleted.\n", x);
-			return r;
+	node * temp = r;
+	r = r->next;
+	free(temp);
+	printf("%d is deleted.\n", x);
+	return r;
 }
 ```
 
@@ -111,11 +110,11 @@ Sonraki if ile iter'in işaret ettiği elemanın sonraki elemanının data'sı a
 Sonraki elemanı kontrol etmemizin sebebi node üzerinde geri gidemememiz ve aşağıdaki resimde görüldüğü üzere silme işlemi için önceki elemana erişmemiz gerekmekte.
 ```
 if(iter->next->data == x){
-			node* temp = iter->next;
-			iter->next = iter->next->next;
-			free(temp);
-			printf("%d is deleted.\n", x);
-			return r;
+	node* temp = iter->next;
+	iter->next = iter->next->next;
+	free(temp);
+	printf("%d is deleted.\n", x);
+	return r;
 } 
 ```
 ![Screenshot](img/popornek1.png)
