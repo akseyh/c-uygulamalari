@@ -15,7 +15,7 @@ node * root;
 root = NULL;
 ```
 ## Push Fonksiyonu:
-push fonksiyonunda ilk olarak veri olmama olasılığını kontrol ediyoruz.
+push fonksiyonunda ilk olarak veri olmama olasılığını kontrol ediyoruz.\
 Eğer hiç veri yoksa ilk olarak malloc ile node kadar bir alan ayırıyoruz.
 Ve data kısmına fonksiyona gönderilen x parametresini atıyoruz.
 Ve başka veri olmadığından next'ini NULL olarak atıyoruz.
