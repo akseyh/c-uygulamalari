@@ -60,12 +60,15 @@ Sonrasında temp adında geçici bir işaretçi oluşturarak bunun için malloc 
 temp işaretçisini araya koymak için temp'in nextini iter'in next'ine atıyoruz.\
 Ve iter'in next'ini de temp'e atadığımız zaman temp artık iki elemanın arasına yerleşmiş oluyor.\
 Ve tabiki son olarak temp'in data'sına fonksiyona gönderilen x parametresini atıyoruz.
-![Screenshot](img/nodeornek.png)
+![Screenshot](img/nodeornek1.png)
 ```
 temp->next = iter->next;
 iter->next = temp;
 temp->data = x;
 ```
+Eğer bu kod istediğimiz gibi çalışırsa aşağıdaki gibi bir sonuç almayı umuyoruz.\
+Bu şekilde temp değerini istediğimiz araya yerleştirmiş oluyoruz.
+![Screenshot](img/nodeornek2.png)
 
 ## Pop fonksiyonu:
 İlk olarak bir işaretçi iter oluşturup bunu root'un işaret ettiği yeri atıyoruz.\
