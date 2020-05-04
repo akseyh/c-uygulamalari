@@ -28,7 +28,7 @@ void yazdir(){
   }
 }
 
-void TYBL_basaelemanekle(int veri){
+void basaekle(int veri){
   yeni = (liste *) malloc(sizeof (liste));
   yeni->sayi = veri;
   yeni->sonraki = NULL;
@@ -42,7 +42,7 @@ void TYBL_basaelemanekle(int veri){
     }
 }
 
-void TYBL_sonaelemanekle(int veri){
+void sonaekle(int veri){
   yeni = (liste *) malloc(sizeof (liste));
   yeni->sayi = veri;
   yeni->sonraki = NULL;
@@ -59,7 +59,7 @@ void TYBL_sonaelemanekle(int veri){
     }
 }
 
-void TYBL_siralielemanekle(int veri){
+void siraliekle(int veri){
 
   if (ilk == NULL) {
     ilk = (liste*) malloc(sizeof (liste));
@@ -92,7 +92,7 @@ void TYBL_siralielemanekle(int veri){
     }
 }
 
-void TYBL_bastanelemansilme(){
+void bastansil(){
   if(ilk != NULL){
     if(ilk->sonraki != NULL){
       silGecici = ilk;
@@ -109,7 +109,7 @@ void TYBL_bastanelemansilme(){
   }
 }
 
-void TYBL_sondanelemansilme(){
+void sondansil(){
   if(ilk != NULL){
     silGecici = ilk;
     if(ilk->sonraki != NULL){
@@ -129,7 +129,7 @@ void TYBL_sondanelemansilme(){
   }
 }
 
-void TYBL_belirlielemansilme(int veri){
+void belirlielemansil(int veri){
   int kontrol = 0;
   if (ilk->sayi == veri) {
     silGecici = ilk;
@@ -174,21 +174,21 @@ void menu() {
     case 1:
       printf("Sayi Giriniz: ");
       scanf("%d", &sayi);
-      TYBL_basaelemanekle(sayi);
+      basaekle(sayi);
       printf("%d sayisi listenin başına eklendi\n",sayi);
       yazdir();
       break;
     case 2:
       printf("Sayi Giriniz: ");
       scanf("%d", &sayi);
-      TYBL_sonaelemanekle(sayi);
+      sonaekle(sayi);
       printf("%d sayisi listenin sonuna eklendi\n",sayi);
       yazdir();
       break;
     case 3:
       printf("Sayi Giriniz: ");
       scanf("%d", &sayi);
-      TYBL_siralielemanekle(sayi);
+      siraliekle(sayi);
       printf("%d sayisi eklenip, sıralandı.\n",sayi);
       yazdir();
       break;
@@ -197,7 +197,7 @@ void menu() {
           printf("Liste Bos\n");
           break;
       }
-      TYBL_bastanelemansilme();
+      bastansil();
       yazdir();
       break;
     case 5:
@@ -205,7 +205,7 @@ void menu() {
           printf("Liste Bos\n");
           break;
       }
-      TYBL_sondanelemansilme();
+      sondansil();
       yazdir();
       break;
     case 6:
@@ -215,7 +215,7 @@ void menu() {
       }
       printf("Sayi Giriniz: ");
       scanf("%d", &sayi);
-      TYBL_belirlielemansilme(sayi);
+      belirlielemansil(sayi);
       yazdir();
       break;
     default:
