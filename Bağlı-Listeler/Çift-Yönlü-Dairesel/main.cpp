@@ -131,10 +131,11 @@ void CYDBL_siralielemanekle(int sayi){
 
   if (ilk == NULL) {
     kuyruk *yeni = (kuyruk*) malloc(sizeof (kuyruk));
-    yeni->sonraki= yeni;
-    yeni->sayi = sayi;
-    ilk = yeni;
-    return;
+     yeni->sonraki= yeni;
+     yeni->onceki = yeni;
+     yeni->sayi = sayi;
+     ilk = yeni;
+     return;
   }
   if ( (ilk->sayi) > sayi ){
     kuyruk *yeni = (kuyruk*) malloc(sizeof (kuyruk));
